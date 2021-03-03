@@ -14,7 +14,7 @@ public class Plus {
 		a = Integer.parseInt(s1);
 		b = Integer.parseInt(s2);
 		System.out.printf("두 수의 합은 %d입니다", a+b);
-		
+		scanner.close();
 		
 		
 		
