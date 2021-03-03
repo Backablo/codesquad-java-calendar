@@ -1,5 +1,7 @@
 package honux.calendar;
 
+import java.util.Scanner;
+
 public class Calendar1 {
 	public static void main(String[] args) {
 		System.out.println("일  월   화    수   목   금    토");
@@ -9,6 +11,14 @@ public class Calendar1 {
 		System.out.println("15  16  17   18   19  20   21");
 		System.out.println("22  23  24   25   26  27   28");
 
+		System.out.println("원하시는 달을 입력하세요.");
+		Scanner scanner = new Scanner(System.in);
+		int month = scanner.nextInt();
+
+		int[] Month = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		System.out.println(month + "월의 마지막 날은 " + Month[month - 1] + "입니다");
+		
+		
 	}
 
 }

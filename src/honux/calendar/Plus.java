@@ -13,11 +13,9 @@ public class Plus {
 		s2 = scanner.next();
 		a = Integer.parseInt(s1);
 		b = Integer.parseInt(s2);
-		System.out.printf("두 수의 합은 %d입니다", a+b);
+		System.out.printf("두 수의 합은 %d입니다", a + b);
 		scanner.close();
-		
-		
-		
+
 //		String twoNumber = scanner.nextLine();
 //		String[] oneNumber = twoNumber.split(" ");
 //		int first = Integer.parseInt(oneNumber[0]);
