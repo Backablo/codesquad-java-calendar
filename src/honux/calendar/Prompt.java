@@ -4,58 +4,56 @@ import java.util.Scanner;
 
 public class Prompt {
 	
-	public int parseDay(String Week) {
-		if(Week.equals("SU")) return 0;
-		else if(Week.equals("MO")) return 1;
-		else if(Week.equals("TU")) return 2;
-		else if(Week.equals("WE")) return 3;
-		else if(Week.equals("TH")) return 4;
-		else if(Week.equals("FR")) return 5;
-		else if(Week.equals("SA")) return 6;
-		else 
-			return 0;
+	/**
+	 * 
+	 * @param week 요일명
+	 * @return 0 ~ 6 (0 = Sunday, 6 = Saturday)
+	 */
+	public int parseDay(String week) {
+		if (week.equals("su")) return 0;
+		else if(week.equals("mo")) return 1;
+		else if(week.equals("tu")) return 2;
+		else if(week.equals("we")) return 3;
+		else if(week.equals("th")) return 4;
+		else if(week.equals("fr")) return 5;
+		else if(week.equals("sa")) return 6;
+		else
+			return 0;		
 	}
-	
-	
-	private final static String PROMPT = "cal> ";
 
 	public void runPrompt() {
 		Scanner scanner = new Scanner(System.in);
 		Calendar1 cal = new Calendar1();
-		int Year = 0;
-		int Month = 0;
-		int Weekday = 0;
+
+		int month = 1;
+		int year = 2017;
+
 		while (true) {
-			System.out.println();
-			System.out.println("원하시는 년도를 입력하세요.");
-			System.out.print(PROMPT);
-			Year = scanner.nextInt();
-			System.out.println("원하시는 달을 입력하세요.");
-			System.out.print(PROMPT);
-			Month = scanner.nextInt();
-			System.out.println("원하는 요일을 입력하세요(SU MO TU WE TH FR SA)");
-			System.out.print(PROMPT);
-			String str_weekday = scanner.next();
-			Weekday = parseDay(str_weekday);
-			
-			if (Month == -1) {
+			System.out.println("년도를 입력하세요.(exit: -1)");
+			System.out.print("YEAR> ");
+			year = scanner.nextInt();
+			if (year == -1)
 				break;
-			}
-			if (Month > 12) {
+			
+			System.out.println("달을 입력하세요.");
+			System.out.print("MONTH> ");
+			month = scanner.nextInt();
+
+			if (month > 12 || month < 1) {
+				System.out.println("잘못된 입력입니다.");
 				continue;
 			}
-			cal.printCalendar(Year, Month, Weekday);
-		}
-		System.out.println("Have a nice day!");
 
+			cal.printCalendar(year, month);
+		}
+
+		System.out.println("Bye~");
 		scanner.close();
 	}
 
 	public static void main(String[] args) {
-
+		// 셸 실행
 		Prompt p = new Prompt();
 		p.runPrompt();
-
 	}
-
 }
