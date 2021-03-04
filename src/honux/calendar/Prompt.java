@@ -23,7 +23,7 @@ public class Prompt {
 
 	public void runPrompt() {
 		Scanner scanner = new Scanner(System.in);
-		Calendar1 cal = new Calendar1();
+		Calendar cal = new Calendar();
 
 		int month = 1;
 		int year = 2017;
